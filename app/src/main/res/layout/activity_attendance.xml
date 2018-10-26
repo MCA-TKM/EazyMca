@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Attendance">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:id="@+id/spinner_department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Department"
+        android:textColorHint="#05ab9a"
+        app:met_floatingLabel="normal" />
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/spinner_department"
+            android:id="@+id/spinner_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Class"
+            android:textColorHint="#05ab9a"
+            app:met_floatingLabel="normal"
+            />
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/spinner_class"
+            android:id="@+id/spinner_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject"
+            android:textColorHint="#05ab9a"
+            app:met_floatingLabel="normal"
+           />
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/spinner_subject"
+            android:id="@+id/spinner_hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hour"
+            android:textColorHint="#05ab9a"
+            app:met_floatingLabel="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/attendance_date"
+            android:layout_below="@+id/spinner_hour"
+            android:textSize="20dp"
+            android:text="date:"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Take Attendance"
+            android:id="@+id/attendance_button"
+            android:layout_below="@+id/attendance_date"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
