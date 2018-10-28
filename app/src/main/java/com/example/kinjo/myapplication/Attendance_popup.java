@@ -23,20 +23,7 @@ public class Attendance_popup extends AppCompatActivity {
 
         button_cancel=findViewById(R.id.cancel_button);
 
-        DisplayMetrics displayMetrics=new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
-        int width=displayMetrics.widthPixels;
-        int height =displayMetrics.heightPixels;
-
-        getWindow().setLayout((int)(width*.7),(int)(height*.6));
-
-        WindowManager.LayoutParams params=getWindow().getAttributes();
-        params.gravity=0;
-        params.x=0;
-        params.y=-20;
-
-        getWindow().setAttributes(params);
 
         roll_no=1;
         textView_roll_no=findViewById(R.id.roll_no);
