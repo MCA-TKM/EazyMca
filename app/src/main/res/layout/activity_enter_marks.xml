@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".EnterMarks">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,28 +21,6 @@
                 android:textColorHint="#05ab9a"
                 app:met_floatingLabel="normal"
                 />
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/radio_mark_type"
-                android:id="@+id/spinner_mark_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Test/Assignment No:"
-                android:textColorHint="#05ab9a"
-                app:met_floatingLabel="normal"
-                />
-
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Enter Marks"
-                android:id="@+id/enter_mark_button"
-                android:layout_below="@+id/spinner_mark_no"
-                android:layout_marginTop="30dp"
-                android:layout_centerHorizontal="true"/>
-
             <RadioGroup
                 android:layout_marginTop="10dp"
                 android:id="@+id/radio_mark_type"
@@ -69,9 +44,31 @@
                     android:layout_height="wrap_content"
                     android:text="Test" />
             </RadioGroup>
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/radio_mark_type"
+                android:id="@+id/spinner_mark_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Test/Assignment No:"
+                android:textColorHint="#05ab9a"
+                app:met_floatingLabel="normal"
+                />
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter Marks"
+                android:id="@+id/enter_mark_button"
+                android:layout_below="@+id/spinner_mark_no"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"/>
+
+
 
 
         </RelativeLayout>
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

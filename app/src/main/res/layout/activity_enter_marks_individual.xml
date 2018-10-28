@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnterMarksIndividual"
+    android:background="@drawable/bc" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_marginTop="20dp"
+            android:id="@+id/student_list_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Student"
+            android:textColorHint="#05ab9a"
+            app:met_floatingLabel="normal"
+            />
+
+        <TextView
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:id="@+id/namestudent_textview"
+            android:layout_below="@id/student_list_spinner"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll No:"
+            android:id="@+id/rollstudent_textview"
+            android:layout_below="@id/namestudent_textview"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/input_layout_maxmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rollstudent_textview"
+            android:theme="@style/TextLabel"
+            android:orientation="horizontal"
+          >
+
+
+            <EditText
+                android:id="@+id/max_marks_edittext"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_text_username"
+                android:layout_marginTop="20dp"
+                android:hint="Maximum Marks"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:theme="@style/MyEditTextStyle" />
+
+
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_toRightOf="@+id/input_layout_maxmark"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/set_max_mark_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/input_layout_applytoall"
+            android:text="Set"
+
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/input_layout_applytoall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_layout_maxmark"
+            android:theme="@style/TextLabel"
+            android:orientation="horizontal"
+            >
+
+
+            <EditText
+                android:id="@+id/mark_apply_to_all"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_text_username"
+                android:layout_marginTop="20dp"
+                android:hint="Enter Marks"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:theme="@style/MyEditTextStyle" />
+
+
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_toRightOf="@+id/input_layout_applytoall"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/apply_to_alll_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/input_layout_entermarks"
+            android:text="Apply  to all"
+
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/input_layout_entermarks"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_layout_applytoall"
+            android:theme="@style/TextLabel"
+            android:orientation="horizontal"
+            >
+
+
+        <EditText
+            android:id="@+id/mark_edittext"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_username"
+            android:layout_marginTop="20dp"
+            android:hint="Enter Marks"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:theme="@style/MyEditTextStyle" />
+
+
+    </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/30"
+            android:textSize="25dp"
+            android:layout_above="@+id/next_button"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/input_layout_entermarks"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:id="@+id/finish_button"
+            android:layout_below="@id/input_layout_entermarks"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+        <Button
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:id="@+id/next_button"
+            android:layout_below="@id/input_layout_entermarks"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+    </RelativeLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
