@@ -36,6 +36,8 @@ public class Attendance extends AppCompatActivity {
 
 
 
+
+
         textView_date = findViewById(R.id.attendance_date);
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 

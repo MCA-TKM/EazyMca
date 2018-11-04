@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EnterMarks">
+    tools:context=".EnterMarks"
+    android:background="@drawable/bc">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -13,15 +14,18 @@
 
 
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                app:met_textColor="#ffffff"
+                app:met_textColorHint="#ffffff"
                 android:layout_marginTop="20dp"
                 android:id="@+id/spinner_class_sub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Class-Subject"
-                android:textColorHint="#05ab9a"
+                android:textColorHint="#ffffff"
                 app:met_floatingLabel="normal"
                 />
             <RadioGroup
+
                 android:layout_marginTop="10dp"
                 android:id="@+id/radio_mark_type"
                 android:layout_width="match_parent"
@@ -30,6 +34,7 @@
                 android:layout_below="@+id/spinner_class_sub" >
 
                 <RadioButton
+                    android:textColor="#ffffff"
                     android:id="@+id/radio1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -38,6 +43,7 @@
                     android:text="Assignment" />
 
                 <RadioButton
+                    android:textColor="#ffffff"
                     android:id="@+id/radio2"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -45,6 +51,8 @@
                     android:text="Test" />
             </RadioGroup>
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                app:met_textColor="#ffffff"
+                app:met_textColorHint="#ffffff"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/radio_mark_type"
                 android:id="@+id/spinner_mark_no"
@@ -58,6 +66,10 @@
 
 
             <Button
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Enter Marks"

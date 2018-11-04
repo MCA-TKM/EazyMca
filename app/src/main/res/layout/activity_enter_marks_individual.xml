@@ -13,16 +13,20 @@
 
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            app:met_textColor="#ffffff"
+            app:met_textColorHint="#ffffff"
+            android:textColorHint="#ffffff"
+            android:outlineSpotShadowColor="#a3b1ff"
             android:layout_marginTop="20dp"
             android:id="@+id/student_list_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Select Student"
-            android:textColorHint="#05ab9a"
             app:met_floatingLabel="normal"
             />
 
         <TextView
+            android:textColor="#ffffff"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,6 +36,7 @@
             android:textSize="20dp"
             android:layout_marginTop="20dp"/>
         <TextView
+            android:textColor="#ffffff"
             android:paddingLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +47,8 @@
             android:layout_marginTop="20dp"/>
 
         <android.support.design.widget.TextInputLayout
+            android:textColorHint="#ffffff"
+            android:outlineSpotShadowColor="#a3b1ff"
             android:layout_marginTop="20dp"
             android:id="@+id/input_layout_maxmark"
             android:layout_width="wrap_content"
@@ -69,6 +76,10 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:background="@drawable/button_style"
             android:layout_toRightOf="@+id/input_layout_maxmark"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="8dp"
@@ -108,6 +119,10 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:background="@drawable/button_style"
             android:layout_toRightOf="@+id/input_layout_applytoall"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="8dp"
@@ -153,6 +168,10 @@
             android:layout_toRightOf="@id/input_layout_entermarks"/>
 
         <Button
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:background="@drawable/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Finish"
@@ -161,10 +180,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
         <Button
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:background="@drawable/button_style"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Finish"
+            android:text="NEXT"
             android:id="@+id/next_button"
             android:layout_below="@id/input_layout_entermarks"
             android:layout_marginTop="20dp"
