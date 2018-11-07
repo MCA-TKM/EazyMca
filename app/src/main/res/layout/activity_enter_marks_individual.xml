@@ -7,12 +7,17 @@
     tools:context=".EnterMarksIndividual"
     android:background="@drawable/bc" >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            app:met_floatingLabelTextColor="#12b7ca"
             app:met_textColor="#ffffff"
             app:met_textColorHint="#ffffff"
             android:textColorHint="#ffffff"
@@ -63,7 +68,6 @@
                 android:id="@+id/max_marks_edittext"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/edit_text_username"
                 android:layout_marginTop="20dp"
                 android:hint="Maximum Marks"
                 android:textColor="#ffffff"
@@ -83,6 +87,7 @@
             android:layout_toRightOf="@+id/input_layout_maxmark"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="8dp"
+            android:clickable="true"
             android:id="@+id/set_max_mark_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -195,6 +200,6 @@
     </RelativeLayout>
 
 
-
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

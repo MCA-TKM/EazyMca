@@ -17,6 +17,7 @@
         android:padding="20dp">
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        app:met_floatingLabelTextColor="#12b7ca"
 
         android:outlineSpotShadowColor="#a3b1ff"
         android:id="@+id/spinner_department"
@@ -29,6 +30,7 @@
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             app:met_textColor="#ffffff"
+            app:met_floatingLabelTextColor="#12b7ca"
             app:met_textColorHint="#ffffff"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/spinner_department"
@@ -41,6 +43,7 @@
             />
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             app:met_textColor="#ffffff"
+            app:met_floatingLabelTextColor="#12b7ca"
             app:met_textColorHint="#ffffff"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/spinner_class"
@@ -54,6 +57,7 @@
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             app:met_textColor="#ffffff"
+            app:met_floatingLabelTextColor="#12b7ca"
             app:met_textColorHint="#ffffff"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/spinner_subject"
@@ -83,7 +87,7 @@
             android:background="@drawable/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Take Attendance"
+            android:text="Take Attendance"
             android:id="@+id/attendance_button"
             android:layout_below="@+id/attendance_date"
             android:layout_marginTop="30dp"

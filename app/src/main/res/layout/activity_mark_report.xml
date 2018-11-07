@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarkReport"
+    android:background="@drawable/bc">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+
+
+            android:outlineSpotShadowColor="#a3b1ff"
+            android:id="@+id/spinner_mark_report_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Department"
+            app:met_textColor="#ffffff"
+            app:met_textColorHint="#ffffff"
+            app:met_floatingLabelTextColor="#12b7ca"
+            app:met_floatingLabel="normal" />
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            app:met_floatingLabelTextColor="#12b7ca"
+            app:met_textColor="#ffffff"
+            app:met_textColorHint="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/spinner_mark_report_department"
+            android:id="@+id/spinner_mark_report_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Class"
+            app:met_floatingLabel="normal"
+            />
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            app:met_floatingLabelTextColor="#12b7ca"
+            app:met_textColor="#ffffff"
+            app:met_textColorHint="#ffffff"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/spinner_mark_report_class"
+            android:id="@+id/spinner_mark_report_select_studnet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Student"
+
+            app:met_floatingLabel="normal"
+            />
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_below="@id/spinner_mark_report_select_studnet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Marks"
+                android:id="@+id/mark_report_button"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <Button
+
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Marks of\nAll Students"
+                android:id="@+id/mark_all_report_button"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/mark_report_button"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

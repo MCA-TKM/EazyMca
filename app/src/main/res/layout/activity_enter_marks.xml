@@ -15,6 +15,7 @@
 
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                 app:met_textColor="#ffffff"
+                app:met_floatingLabelTextColor="#12b7ca"
                 app:met_textColorHint="#ffffff"
                 android:layout_marginTop="20dp"
                 android:id="@+id/spinner_class_sub"
@@ -40,7 +41,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Assignment" />
+                    android:text="@string/assignment" />
 
                 <RadioButton
                     android:textColor="#ffffff"
@@ -48,10 +49,11 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Test" />
+                    android:text="@string/test" />
             </RadioGroup>
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                 app:met_textColor="#ffffff"
+                app:met_floatingLabelTextColor="#12b7ca"
                 app:met_textColorHint="#ffffff"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/radio_mark_type"
