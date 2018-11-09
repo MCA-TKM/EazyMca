@@ -62,7 +62,7 @@ public class   Attendance_popup extends AppCompatActivity {
                         textView_roll_no.setText(""+roll_no);
 
                     }
-                }, 400);
+                }, 200);
 
 
             }
@@ -93,7 +93,7 @@ public class   Attendance_popup extends AppCompatActivity {
                         textView_roll_no.setText(""+roll_no);
 
                     }
-                }, 400);
+                }, 200);
 
 
             }
