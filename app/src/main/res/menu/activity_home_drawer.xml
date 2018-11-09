@@ -22,7 +22,7 @@
         <item
             android:id="@+id/nav_report_attendance"
             android:icon="@drawable/ic_report_attandance"
-            android:title="Attendance Report" />
+            android:title="Attendance Report " />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"
