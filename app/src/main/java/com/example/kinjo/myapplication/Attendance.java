@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
@@ -27,14 +28,13 @@ public class Attendance extends AppCompatActivity {
     MaterialBetterSpinner spinner_class, spinner_subjet, spinner_hour, spinner_department;
     TextView textView_date;
     Button button_attendance;
+    int no_of_students=0;
+    String subject="",hour="",spinner_value="S1-MCA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
-
-
-
 
 
 
@@ -51,21 +51,32 @@ public class Attendance extends AppCompatActivity {
         spinner_hour = (MaterialBetterSpinner) findViewById(R.id.spinner_hour);
         ArrayAdapter adapter1 = ArrayAdapter.createFromResource(this, R.array.class_array, android.R.layout.simple_dropdown_item_1line);
         spinner_class.setAdapter(adapter1);
+        ArrayAdapter adapter4 = ArrayAdapter.createFromResource(Attendance.this, R.array.class_mca_s5_subject, android.R.layout.simple_dropdown_item_1line);
+        spinner_subjet.setAdapter(adapter4);
 
         spinner_class.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String spinner_value = adapterView.getItemAtPosition(position).toString();
+                 spinner_value = adapterView.getItemAtPosition(position).toString();
+
 
                 if (spinner_value.equals("MCA-S1")) {
+
+                    no_of_students=38;
 
                     ArrayAdapter adapter2 = ArrayAdapter.createFromResource(Attendance.this, R.array.class_mca_s1_subject, android.R.layout.simple_dropdown_item_1line);
                     spinner_subjet.setAdapter(adapter2);
                 } else if (spinner_value.equals("MCA-S3")) {
+
+                    no_of_students=47;
+
                     ArrayAdapter adapter2 = ArrayAdapter.createFromResource(Attendance.this, R.array.class_mca_s3_subject, android.R.layout.simple_dropdown_item_1line);
                     spinner_subjet.setAdapter(adapter2);
 
                 } else {
+
+                    no_of_students=44;
+
                     ArrayAdapter adapter3 = ArrayAdapter.createFromResource(Attendance.this, R.array.class_mca_s5_subject, android.R.layout.simple_dropdown_item_1line);
                     spinner_subjet.setAdapter(adapter3);
 
@@ -85,8 +96,38 @@ public class Attendance extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent=new Intent(Attendance.this,Attendance_popup.class);
-                startActivity(intent);
+
+                spinner_subjet.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        subject= parent.getItemAtPosition(position).toString();
+                    }
+                });
+
+                spinner_hour.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        hour=parent.getItemAtPosition(position).toString();
+                    }
+                });
+
+                if(subject.equals("")||hour.equals("")||spinner_value.equals("")||no_of_students==0) {
+
+
+                    Toast.makeText(Attendance.this, "Select all fields", Toast.LENGTH_LONG).show();
+                }else {
+
+                    Intent intent = new Intent(Attendance.this, Attendance_popup.class);
+
+                    intent.putExtra("subject", subject);
+                    intent.putExtra("hour", hour);
+                    intent.putExtra("class", spinner_value);
+                    intent.putExtra("number", no_of_students);
+
+                    startActivity(intent);
+                    finish();
+                }
 
             }});
 

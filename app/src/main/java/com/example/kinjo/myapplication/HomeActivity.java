@@ -37,9 +37,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -81,8 +78,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
+        }
+        else if(mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
             {
                 moveTaskToBack(true);
                 android.os.Process.killProcess(android.os.Process.myPid());
@@ -92,7 +89,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             mBackPressed = System.currentTimeMillis();
         }
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

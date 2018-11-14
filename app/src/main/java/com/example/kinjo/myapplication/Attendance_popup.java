@@ -1,7 +1,11 @@
 package com.example.kinjo.myapplication;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.transition.TransitionManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -24,6 +28,10 @@ public class   Attendance_popup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_popup);
+
+
+        Intent intent=getIntent();
+        final int number=intent.getIntExtra("number",45);
 
         button_cancel=findViewById(R.id.cancel_button);
 
@@ -59,6 +67,10 @@ public class   Attendance_popup extends AppCompatActivity {
                         String n=String.valueOf(roll_no);
                         textView_absent.setText(s+n+",");
                         roll_no=roll_no+1;
+                        if (roll_no>number)
+                        {
+                            att_alert(textView_absent.getText().toString());
+                        }else
                         textView_roll_no.setText(""+roll_no);
 
                     }
@@ -90,7 +102,11 @@ public class   Attendance_popup extends AppCompatActivity {
                     public void run() {
                         // Do something after 5s = 5000ms
                         roll_no=roll_no+1;
-                        textView_roll_no.setText(""+roll_no);
+                        if (roll_no>number)
+                        {
+                            att_alert(textView_absent.getText().toString());
+                        }else
+                            textView_roll_no.setText(""+roll_no);
 
                     }
                 }, 200);
@@ -111,5 +127,33 @@ public class   Attendance_popup extends AppCompatActivity {
             }
         });
 
+    }
+    public void att_alert(String string)
+    {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setMessage(string+"\nAre you sure want to Submit");
+        builder1.setCancelable(false);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        Toast.makeText(Attendance_popup.this, "Attendance Submitted Successfully", Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }
