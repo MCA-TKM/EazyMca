@@ -10,7 +10,7 @@ else
 {
 
 	$class=$_POST['class'];
-	
+	//gfdsghjsjd
 
 	$sql = "select name from student_details where class='$class';";
 	$result = mysqli_query($con,$sql);
