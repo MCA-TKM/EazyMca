@@ -112,11 +112,7 @@ public class Attendance extends AppCompatActivity {
                     }
                 });
 
-                if(subject.equals("")||hour.equals("")||spinner_value.equals("")||no_of_students==0) {
 
-
-                    Toast.makeText(Attendance.this, "Select all fields", Toast.LENGTH_LONG).show();
-                }else {
 
                     Intent intent = new Intent(Attendance.this, Attendance_popup.class);
 
@@ -126,8 +122,7 @@ public class Attendance extends AppCompatActivity {
                     intent.putExtra("number", no_of_students);
 
                     startActivity(intent);
-                    finish();
-                }
+
 
             }});
 

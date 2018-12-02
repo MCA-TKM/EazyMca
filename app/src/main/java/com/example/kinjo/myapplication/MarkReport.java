@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+import android.widget.Button;
+
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -19,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import org.json.JSONArray;
-import org.json.JSONException;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class MarkReport extends AppCompatActivity {
 
     String spinner_value,name;
     ProgressDialog pd;
+    Button view_button;
 
 
     String URL_POST="https://bibinbaby1996.000webhostapp.com/select.php";
@@ -42,6 +44,7 @@ public class MarkReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mark_report);
 
+        view_button=findViewById(R.id.mark_report_button);
 
         spinner_class = (MaterialBetterSpinner) findViewById(R.id.spinner_mark_report_class);
         spinner_department = (MaterialBetterSpinner) findViewById(R.id.spinner_mark_report_department);
@@ -67,22 +70,46 @@ public class MarkReport extends AppCompatActivity {
 
 
 
+
+
                 } else if (spinner_value.equals("MCA-S3")) {
 
-
+                    ServerConnetion(URL_POST,"S1-MCA");
 
 
 
                 } else {
-
+                    ServerConnetion(URL_POST,"S1-MCA");
 
 
                 }
 
+                view_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(MarkReport.this,Mark.class);
+
+
+
+
+                        spinner_class_stud_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                String name= parent.getItemAtPosition(position).toString();
+                            }
+                        });
+
+                        intent.putExtra("name",name);
+                        startActivity(intent);
+
+
+                    }
+                });
+
             }
         });
-
-
 
 
 
@@ -123,12 +150,6 @@ public class MarkReport extends AppCompatActivity {
 
 
 
-
-
-
-                    String[] student=new String[1];
-                    student[0]="student name";
-
                     ArrayAdapter<String> arrayAdapter_class =
                             new ArrayAdapter<String>(MarkReport.this,android.R.layout.simple_dropdown_item_1line, allNames);
                     spinner_class_stud_list.setAdapter(arrayAdapter_class);
@@ -141,7 +162,6 @@ public class MarkReport extends AppCompatActivity {
 
 
                 }
-
 
 
 
