@@ -45,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
                 String usernamre=editTextUsername.getText().toString();
                 String password=editTextPassword.getText().toString();
+
+                if(usernamre.equals("stud")&&password.equals("pass"))
+                {
+
+                Intent intent=new Intent(MainActivity.this,StudentHome.class);
+                startActivity(intent);
+
+
+                }else{
+
+
+
                 String URL_POST="https://bibinbaby1996.000webhostapp.com/new.php";
 
                 Boolean connected=false;
@@ -61,10 +73,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Check Internet Conenction", Toast.LENGTH_SHORT).show();
-                }
+                }}
 
             }
         });
+
+
     }
     private void ServerConnetion (String URL_POST, final String username, final String password) {
 

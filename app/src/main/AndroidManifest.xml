@@ -35,7 +35,8 @@
         <activity android:name=".AttendanceReport" />
         <activity android:name=".MarkReport" />
         <activity android:name=".AttendanceView" />
-        <activity android:name=".Mark"></activity>
+        <activity android:name=".Mark" />
+        <activity android:name=".StudentHome"></activity>
     </application>
 
 </manifest>

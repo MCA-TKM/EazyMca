@@ -5,39 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mark"
-    android:background="@drawable/bc">
-
-    <RelativeLayout
-        android:padding="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Name:"
-            android:id="@+id/nm"
-            android:textColor="#fff"
-
-            />
-        <TextView
-            android:id="@+id/rn"
-            android:textColor="#fff"
-            android:layout_below="@+id/nm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Roll NO:"
-            android:layout_marginBottom="10dp"
-            />
-
-    </RelativeLayout>
+    android:background="@drawable/bc"
+    android:layout_gravity="center">
 
 
     <ScrollView
-
         android:paddingTop="20dp"
         android:layout_marginTop="20dp"
         android:id="@+id/scrollView1"
@@ -58,6 +30,7 @@
                 android:orientation="vertical" >
 
                 <TableLayout
+                    android:padding="30dp"
                     android:id="@+id/table_mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

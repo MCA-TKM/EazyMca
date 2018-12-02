@@ -112,6 +112,16 @@ public class EnterMarksIndividual extends AppCompatActivity {
             }
         });
 
+        Button button2=findViewById(R.id.finish_button);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(EnterMarksIndividual.this, "Marks Uploaded Successfully ", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
         ServerConnetion(URL_POST,"S1-MCA");
 
 
