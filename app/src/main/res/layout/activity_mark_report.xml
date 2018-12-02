@@ -70,20 +70,6 @@
                 android:layout_centerHorizontal="true"
                 />
 
-            <Button
-
-                android:textColor="#ffffff"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:background="@drawable/button_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="View Marks of\nAll Students"
-                android:id="@+id/mark_all_report_button"
-                android:layout_marginTop="40dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/mark_report_button"
-                />
         </RelativeLayout>
     </RelativeLayout>
 
