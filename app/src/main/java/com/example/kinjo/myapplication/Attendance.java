@@ -123,6 +123,8 @@ public class Attendance extends AppCompatActivity {
 
                     startActivity(intent);
 
+                    finish();
+
 
             }});
 

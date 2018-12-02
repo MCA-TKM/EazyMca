@@ -36,6 +36,48 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
 
+        TextView textView=findViewById(R.id.att);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(HomeActivity.this,Attendance.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView textView1=findViewById(R.id.em);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(HomeActivity.this,EnterMarks.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView textView2=findViewById(R.id.mr);
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(HomeActivity.this,MarkReport.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView textView3=findViewById(R.id.ar);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(HomeActivity.this,AttendanceReport.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

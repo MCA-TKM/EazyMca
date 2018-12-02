@@ -65,6 +65,7 @@
 
 
             <EditText
+                android:inputType="number"
                 android:id="@+id/max_marks_edittext"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -108,6 +109,7 @@
 
 
             <EditText
+                android:inputType="number"
                 android:id="@+id/mark_apply_to_all"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
@@ -150,6 +152,7 @@
 
 
         <EditText
+            android:inputType="number"
             android:id="@+id/mark_edittext"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -163,11 +166,12 @@
 
     </android.support.design.widget.TextInputLayout>
         <TextView
+            android:id="@+id/max_marks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/30"
             android:textSize="25dp"
-            android:layout_above="@+id/next_button"
+            android:layout_above="@+id/finish_button"
             android:paddingBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/input_layout_entermarks"/>
@@ -181,19 +185,6 @@
             android:layout_height="wrap_content"
             android:text="Finish"
             android:id="@+id/finish_button"
-            android:layout_below="@id/input_layout_entermarks"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
-        <Button
-            android:textColor="#ffffff"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:background="@drawable/button_style"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NEXT"
-            android:id="@+id/next_button"
             android:layout_below="@id/input_layout_entermarks"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>

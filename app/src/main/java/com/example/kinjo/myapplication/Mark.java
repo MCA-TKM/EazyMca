@@ -26,11 +26,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Mark extends AppCompatActivity {
 
     ProgressDialog pd;
     String name;
+    int[] mark={15,22,13,28,21,17,27};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,54 +47,6 @@ public class Mark extends AppCompatActivity {
         init();
 
 
-    }
-
-
-    private void ServerConnetion (String URL_POST, final String class_name) {
-
-        pd= new ProgressDialog(this);
-        pd.setCancelable(false);
-        pd.setMessage("Loading\nPlease wait...");
-        pd.show();
-
-        HttpsTrustManager.allowAllSSL();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_POST, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-
-                    init();
-
-
-
-            }
-
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                pd.dismiss();
-
-            }
-
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-
-                //  params.put("QUESTION",question);
-                params.put("name",name);
-
-                return params;
-
-            }
-        };
-
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
     }
 
 
@@ -121,6 +75,8 @@ public class Mark extends AppCompatActivity {
         tv3.setTextColor(Color.WHITE);
         tbrow0.addView(tv3);
         stk.addView(tbrow0);
+       // int random = new Random().nextInt(31) + 10; // [0, 20] + 20 => [10, 30]
+
         for (int i = 0; i < 7; i++) {
             TableRow tbrow = new TableRow(this);
             TextView t1v = new TextView(this);
@@ -131,12 +87,14 @@ public class Mark extends AppCompatActivity {
             tbrow.addView(t1v);
             TextView t2v = new TextView(this);
             t2v.setText(" "+subject[i].substring(9));
-            t2v.setTextSize(25);
+            t2v.setTextSize(15);
             t2v.setTextColor(Color.WHITE);
             t2v.setGravity(Gravity.CENTER);
             tbrow.addView(t2v);
             TextView t3v = new TextView(this);
-            t3v.setText("25");
+
+
+            t3v.setText(mark[i]);
             t3v.setTextSize(25);
             t3v.setTextColor(Color.WHITE);
             t3v.setGravity(Gravity.CENTER);
@@ -151,6 +109,7 @@ public class Mark extends AppCompatActivity {
         }
 
     }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.kinjo.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,11 +19,27 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class   Attendance_popup extends AppCompatActivity {
 
     TextView textView_roll_no,textView_absent;
     int roll_no;
     Button button_cancel;
+    ProgressDialog pd;
+
+    String cls,hr,sub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +48,13 @@ public class   Attendance_popup extends AppCompatActivity {
 
 
         Intent intent=getIntent();
-        final int number=intent.getIntExtra("number",45);
+        final int number=24;
+
+        cls=intent.getStringExtra("class");
+        hr=intent.getStringExtra("hour");
+        sub=intent.getStringExtra("subject");
+
+        Toast.makeText(this, sub, Toast.LENGTH_SHORT).show();
 
         button_cancel=findViewById(R.id.cancel_button);
 
@@ -44,7 +67,7 @@ public class   Attendance_popup extends AppCompatActivity {
                 R.anim.slide_right);
 
 
-        int no_of_students=44;
+
         roll_no=1;
         textView_absent=findViewById(R.id.absent_textview);
         textView_roll_no=findViewById(R.id.roll_no);
@@ -128,7 +151,7 @@ public class   Attendance_popup extends AppCompatActivity {
         });
 
     }
-    public void att_alert(String string)
+    public void att_alert(final String string)
     {
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
@@ -140,8 +163,14 @@ public class   Attendance_popup extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        Toast.makeText(Attendance_popup.this, "Attendance Submitted Successfully", Toast.LENGTH_LONG).show();
-                        finish();
+                        String URL_POST="https://bibinbaby1996.000webhostapp.com/absent.php";
+
+                        String s=string.replaceAll("Absenties:","");
+
+                       // Toast.makeText(Attendance_popup.this, s, Toast.LENGTH_SHORT).show();
+
+                        ServerConnetion(URL_POST,s,cls,hr,sub);
+
                     }
                 });
 
@@ -156,4 +185,58 @@ public class   Attendance_popup extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
+    private void ServerConnetion (String URL_POST, final String absenties, final String a , final String b, final String c) {
+
+        pd= new ProgressDialog(this);
+        pd.setCancelable(false);
+        pd.setMessage("Loading\nPlease wait...");
+        pd.show();
+
+        HttpsTrustManager.allowAllSSL();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_POST, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+                Toast.makeText(Attendance_popup.this, "Attendance Submitted Successfully", Toast.LENGTH_LONG).show();
+                finish();
+                pd.dismiss();
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+
+                Toast.makeText(Attendance_popup.this, error.toString(), Toast.LENGTH_SHORT).show();
+
+                pd.dismiss();
+
+            }
+
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+
+                //  params.put("QUESTION",question);
+                params.put("absenties",absenties );
+                params.put("class",a);
+                params.put("hour",b);
+                params.put("subject",c);
+
+                return params;
+
+            }
+        };
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
 }

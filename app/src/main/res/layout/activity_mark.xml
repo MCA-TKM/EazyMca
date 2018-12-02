@@ -7,8 +7,37 @@
     tools:context=".Mark"
     android:background="@drawable/bc">
 
+    <RelativeLayout
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Name:"
+            android:id="@+id/nm"
+            android:textColor="#fff"
+
+            />
+        <TextView
+            android:id="@+id/rn"
+            android:textColor="#fff"
+            android:layout_below="@+id/nm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Roll NO:"
+            android:layout_marginBottom="10dp"
+            />
+
+    </RelativeLayout>
+
 
     <ScrollView
+
         android:paddingTop="20dp"
         android:layout_marginTop="20dp"
         android:id="@+id/scrollView1"

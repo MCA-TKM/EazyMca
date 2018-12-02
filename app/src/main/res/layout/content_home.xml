@@ -8,4 +8,90 @@
     tools:context=".HomeActivity"
     tools:showIn="@layout/app_bar_home">
 
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:padding="10dp">
+
+
+        <TableRow
+
+            android:padding="10dp"
+            android:id="@+id/row_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:background="@drawable/bc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/att"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Take\nAttendance\n"
+                android:textColor="#ffffff"
+           />
+
+            <TextView
+                android:background="@drawable/bc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:id="@+id/em"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Enter\nMarks\n"
+                android:textColor="#fff"
+               />
+
+
+        </TableRow>
+
+        <TableRow
+
+            android:padding="10dp"
+            android:id="@+id/row_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp">
+
+            <TextView
+
+                android:background="@drawable/bc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/mr"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Marks\nReport"
+                android:textColor="#fff" />
+
+            <TextView
+                android:background="@drawable/bc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Attendance\nRport"
+                android:textColor="#fff"
+                android:id="@+id/ar"/>
+
+
+        </TableRow>
+
+
+
+
+    </TableLayout>
 </android.support.constraint.ConstraintLayout>

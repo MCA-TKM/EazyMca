@@ -26,7 +26,7 @@
         <item>RLMCA107-Principles of Management</item>
         <item>RLMCA109-Digital Fundamentals</item>
         <item>RLMCA131-Programming Lab</item>
-        <item>RLMCA133-Applied Statistics Lab</item>
+            <item>RLMCA133-Applied Statistics Lab</item>
     </string-array>
 
     <string-array name="class_mca_s3_subject">

@@ -18,13 +18,28 @@
                 app:met_floatingLabelTextColor="#12b7ca"
                 app:met_textColorHint="#ffffff"
                 android:layout_marginTop="20dp"
-                android:id="@+id/spinner_class_sub"
+                android:layout_below="@+id/spinner_department"
+                android:id="@+id/spinner_classm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Class-Subject"
-                android:textColorHint="#ffffff"
+                android:hint="Class"
+
                 app:met_floatingLabel="normal"
                 />
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                app:met_textColor="#ffffff"
+                app:met_floatingLabelTextColor="#12b7ca"
+                app:met_textColorHint="#ffffff"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/spinner_classm"
+                android:id="@+id/spinner_subjectm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Subject"
+
+                app:met_floatingLabel="normal"
+                />
+
             <RadioGroup
 
                 android:layout_marginTop="10dp"
@@ -32,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@+id/spinner_class_sub" >
+                android:layout_below="@+id/spinner_subjectm" >
 
                 <RadioButton
                     android:textColor="#ffffff"
