@@ -16,7 +16,8 @@ else{
 	$row=mysqli_fetch_array($result);
  	if($row)
  	{
- 
+ 	   // $qry="select name,department,image from teacher_deatils where teacherID='row[0]';"
+ 	  //  $result = mysqli_query($con,$sql);
  		$arr = array('status' => 'true', 'teacherID' => $row[0]);
    		echo json_encode($arr);
 	 }
@@ -26,8 +27,6 @@ else{
   		echo json_encode($arr);
 	}
 	mysqli_close($con);
-
-
 
 
 }
